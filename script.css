@@ -13,6 +13,11 @@ p{
     padding: 0;
     box-sizing: border-box;
   }
+h1{
+  font-size: 3rem;
+  font-weight: 900;
+  }
+  
   
   body,
   h1,
@@ -104,8 +109,9 @@ ul li {
   }
 
 .input{
-  background-color: grey;
+  background-color: rgba(0, 0, 0, 0.524);
   border-radius: 15px;
+  border-color: #0064bd;
   color: white;
   font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans", sans-serif;
   font-size: 13px;
@@ -125,6 +131,12 @@ input:focus{
 input:active{
   
 }
-
+.botao_apagar{
+  background-color: rgba(255, 255, 255, 0);
+  color: #bd0000;
+  border: none;
+  padding-left: 15px;
+  cursor: pointer;
+}
 
   
