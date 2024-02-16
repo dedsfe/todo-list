@@ -1,32 +1,35 @@
-var input = document.querySelector('.input')
-var button = document.querySelector('.btn')
-var lista = document.querySelector('.todo')
+$(document).ready(function() {
+    var $input = $('.input');
+    var $button = $('.btn');
+    var $lista = $('.todo');
+    var todosAtuais = [];
 
-var todos_atuais = []
-
-
-
-button.addEventListener("click", function(){
-    if (input.value !== ""){
-        var inputValue = input.value;
-        todos_atuais.push(inputValue);
-        input.value = "";
-
-        lista.innerHTML = '';
-
-        for (i in todos_atuais){
-            
-            var texto_da_lista = document.createElement('li');
-            texto_da_lista.innerText = todos_atuais[i]
-            lista.append(texto_da_lista)
-        
+    // Função para adicionar itens à lista
+    $button.on("click", function() {
+        var inputValue = $input.val();
+        if (inputValue !== "") {
+            todosAtuais.push(inputValue);
+            $input.val('');
+            updateList();
+        } else {
+            console.log('Está Vazio o Input');
         }
-          
+    });
 
-        console.log(todos_atuais);
-    }else{
-        console.log('Está Vazio o Input')
+    // Função para atualizar a lista
+    function updateList() {
+        $lista.empty();
+        $.each(todosAtuais, function(index, item) {
+            var $textoDaLista = $('<li>').text(item);
+            var $botaoApagar = $('<button>').text('Apagar').addClass('botao_apagar');
+            
+            $botaoApagar.on("click", function() {
+                todosAtuais.splice(index, 1);
+                updateList();
+            });
+            
+            $textoDaLista.append($botaoApagar);
+            $lista.append($textoDaLista);
+        });
     }
 });
-
-
