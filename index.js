@@ -4,6 +4,18 @@ $(document).ready(function() {
     var $lista = $('.todo');
     var todosAtuais = [];
 
+
+    $input.on("keypress",function(event){
+        if (event.key === "Enter"){
+            var inputValue = $input.val();
+            if (inputValue !== "") {
+                todosAtuais.push(inputValue);
+                $input.val('');
+                updateList();
+            } else {
+                console.log('Está Vazio o Input');
+            }
+}});
     // Função para adicionar itens à lista
     $button.on("click", function() {
         var inputValue = $input.val();
