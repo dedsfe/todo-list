@@ -113,7 +113,7 @@ ul li {
 .input{
   height: 35px;  
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.275);
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgb(255, 255, 255);
   border-radius: 15px;
   border-color: #0064bd;
   font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans", sans-serif;
