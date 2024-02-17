@@ -74,7 +74,7 @@ ul li {
     border-radius: 15px;
     box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
     box-sizing: border-box;
-    color: #fff;
+    color: #ffffff;
     cursor: pointer;
     display: inline-block;
     font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans", sans-serif;
@@ -96,7 +96,9 @@ ul li {
   
   .btn:hover,
   .btn:focus {
-    background-color: #07c;
+    background-color: rgb(0, 149, 255);
+    box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+    font-weight: 500;
   }
   
   .btn:focus {
@@ -109,10 +111,11 @@ ul li {
   }
 
 .input{
-  background-color: rgba(0, 0, 0, 0.524);
+  height: 35px;  
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.275);
+  background-color: rgba(0, 0, 0, 0);
   border-radius: 15px;
   border-color: #0064bd;
-  color: white;
   font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans", sans-serif;
   font-size: 13px;
   font-weight: 400;
@@ -123,14 +126,13 @@ ul li {
   
 }
 input::placeholder{
-  color: #ffffff96;
+  color: #000000af;
 }
 input:focus{
-  color: white;
-}
-input:active{
+  color: rgb(0, 0, 0);
   
 }
+
 .botao_apagar{
   background-color: rgba(255, 255, 255, 0);
   color: #bd0000;
