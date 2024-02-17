@@ -2,14 +2,14 @@ $(document).ready(function() {
     var $input = $('.input');
     var $button = $('.btn');
     var $lista = $('.todo');
-    var todosAtuais = [];
+    var toDosAtuais = [];
 
 
     $input.on("keypress",function(event){
         if (event.key === "Enter"){
             var inputValue = $input.val();
             if (inputValue !== "") {
-                todosAtuais.push(inputValue);
+                toDosAtuais.push(inputValue);
                 $input.val('');
                 updateList();
             } else {
@@ -20,7 +20,7 @@ $(document).ready(function() {
     $button.on("click", function() {
         var inputValue = $input.val();
         if (inputValue !== "") {
-            todosAtuais.push(inputValue);
+            toDosAtuais.push(inputValue);
             $input.val('');
             updateList();
         } else {
@@ -31,12 +31,12 @@ $(document).ready(function() {
     // Função para atualizar a lista
     function updateList() {
         $lista.empty();
-        $.each(todosAtuais, function(index, item) {
+        $.each(toDosAtuais, function(index, item) {
             var $textoDaLista = $('<li>').text(item);
             var $botaoApagar = $('<button>').text('Apagar').addClass('botao_apagar');
             
             $botaoApagar.on("click", function() {
-                todosAtuais.splice(index, 1);
+                toDosAtuais.splice(index, 1);
                 updateList();
             });
             
@@ -44,4 +44,8 @@ $(document).ready(function() {
             $lista.append($textoDaLista);
         });
     }
+
+    function saveToLocalStorage(){
+        localStorage.setItem('todos', JSON.stringify(toDosAtuais));
+    };
 });
