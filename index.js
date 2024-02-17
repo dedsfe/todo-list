@@ -3,7 +3,9 @@ $(document).ready(function() {
     var $button = $('.btn');
     var $lista = $('.todo');
     var toDosAtuais = [];
-
+    
+ var toDosAtuais = JSON.parse(localStorage.getItem('todos')) || [];
+     updateList();
 
     $input.on("keypress",function(event){
         if (event.key === "Enter"){
@@ -48,4 +50,5 @@ $(document).ready(function() {
     function saveToLocalStorage(){
         localStorage.setItem('todos', JSON.stringify(toDosAtuais));
     };
+    updateList();
 });
